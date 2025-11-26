@@ -1,0 +1,794 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Leads and Sales Automation Workshop — Full</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    /* Custom colors and font setup */
+    :root {
+      --bg-dark: #030403;
+      --bg-mid: #0a0705;
+      --gold-1: #f0b41a;
+      --gold-2: #fbe27a;
+      --muted: #dcd6c9;
+    }
+
+    body {
+      font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+      color: #fff;
+      /* Simulating the dark gradient background */
+      background-color: var(--bg-dark);
+    }
+
+    /* Left accent is challenging, simplified here */
+    .left-accent {
+      position:fixed;
+      left:0;
+      top:0;
+      bottom:0;
+      width:6px;
+      background: linear-gradient(180deg, #ffd6dc 0%, rgba(255,214,220,0.6) 100%);
+      z-index:50;
+    }
+
+    /* Gold Gradient Text */
+    .gold-gradient-text {
+      background: linear-gradient(90deg, var(--gold-1), var(--gold-2));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    /* Gold Gradient Button Look */
+    .gold-pill-btn {
+      background: linear-gradient(90deg, #e69e1a 0%, #f8e27a 100%);
+      color: #0f0f0f;
+      border: 1px solid rgba(0, 0, 0, 0.12);
+    }
+
+    .gold-hr {
+      background: linear-gradient(90deg, var(--gold-1), var(--gold-2));
+    }
+
+    /* Dark Panel/Card Look */
+    .dark-panel {
+      background-color: rgba(255, 255, 255, 0.05); /* Simplified from a complex gradient */
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Red Limited Box Look */
+    .red-limited-box {
+      background-color: rgba(170, 20, 20, 0.1);
+      border: 2px solid rgba(210, 30, 30, 0.3);
+    }
+
+    /* Green Check Circle */
+    .check-circle {
+      background: linear-gradient(180deg, #36c36c, #27ab59); /* Simplified green gradient */
+      flex-shrink: 0;
+    }
+
+    /* Panel Icon */
+    .panel-icon {
+      background-color: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      flex-shrink: 0;
+    }
+
+    /* Overriding Bootstrap for the subtle text color */
+    .text-muted-custom { color: var(--muted) !important; }
+  </style>
+</head>
+<body class="bg-dark">
+  <div class="left-accent" aria-hidden="true"></div>
+
+  <header class="d-flex align-items-center justify-content-center text-center py-5" style="min-height: 420px; position:relative; z-index:1;">
+    <div class="container py-5">
+      <div class="d-inline-block position-relative mb-4">
+        <span class="gold-pill-btn d-inline-block px-5 py-3 rounded-pill fw-bold fs-5">Leads and Sales Automation Workshop</span>
+      </div>
+
+      <p class="text-white-75 fw-semibold mt-3 mb-4 fs-5">Unblock: 3-Hour LIVE webinar Uncovers...</p>
+
+      <h1 class="hero-title fw-bolder mb-0 gold-gradient-text px-2" style="font-size: clamp(2.2rem, 6vw, 4.25rem); line-height:1.02;">
+        Build a 6-Figure Coaching Business Using AI —
+        <span class="d-block">Without Chasing people</span>
+      </h1>
+    </div>
+  </header>
+
+  <section class="container py-5">
+    <div class="row gx-lg-5">
+      <div class="col-lg-7">
+        <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?q=80&w=1400&auto=format&fit=crop" alt="event" class="img-fluid rounded-3 mb-4 shadow-lg">
+
+        <div class="dark-panel rounded-3 p-3 d-flex align-items-center mb-4">
+          <img class="rounded-3 me-3" src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?q=80&w=400&auto=format&fit=crop" alt="speaker" style="width:96px; height:96px; object-fit:cover;">
+          <div>
+            <div class="text-warning fw-bolder fs-5">Chirag Chhabra</div>
+            <div class="text-muted-custom fw-semibold mt-1">
+              <div>📚 Trained 100k Entrepreneurs</div>
+              <div class="mt-1">⭐ Rated 4.9/5</div>
+            </div>
+          </div>
+        </div>
+
+        <h4 class="fw-bolder text-white mb-2">Webinar Details</h4>
+        <div class="gold-hr" style="width:56px; height:4px; border-radius:4px; margin-bottom:12px;"></div>
+
+        <div class="row g-3">
+          <div class="col-sm-6">
+            <div class="dark-panel rounded-3 p-3 d-flex align-items-center">
+              <div class="panel-icon rounded-2 d-flex align-items-center justify-content-center me-3" style="width:46px; height:46px;">
+                <i class="bi bi-clock-fill fs-5 text-white"></i>
+              </div>
+              <div>
+                <div class="text-warning fw-bold">Duration</div>
+                <div class="text-muted-custom" style="font-size:0.85rem;">2 hours</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="dark-panel rounded-3 p-3 d-flex align-items-center">
+              <div class="panel-icon rounded-2 d-flex align-items-center justify-content-center me-3" style="width:46px; height:46px;">
+                <i class="bi bi-calendar-event-fill fs-5 text-white"></i>
+              </div>
+              <div>
+                <div class="text-warning fw-bold">Date</div>
+                <div class="text-muted-custom" style="font-size:0.85rem;">19th November 2025</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="dark-panel rounded-3 p-3 d-flex align-items-center">
+              <div class="panel-icon rounded-2 d-flex align-items-center justify-content-center me-3" style="width:46px; height:46px;">
+                <i class="bi bi-translate fs-5 text-white"></i>
+              </div>
+              <div>
+                <div class="text-warning fw-bold">Language</div>
+                <div class="text-muted-custom" style="font-size:0.85rem;">Hindi & English</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="dark-panel rounded-3 p-3 d-flex align-items-center">
+              <div class="panel-icon rounded-2 d-flex align-items-center justify-content-center me-3" style="width:46px; height:46px;">
+                <i class="bi bi-geo-alt-fill fs-5 text-white"></i>
+              </div>
+              <div>
+                <div class="text-warning fw-bold">Venue</div>
+                <div class="text-muted-custom" style="font-size:0.85rem;">Zoom</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-5 mt-4 mt-lg-0">
+        <div class="dark-panel rounded-4 p-4 shadow-lg">
+          <div class="d-flex align-items-center mb-3">
+            <i class="bi bi-lightbulb-fill text-warning me-2 fs-5"></i>
+            <div class="text-warning fw-bolder fs-5">Why Attend this Workshop?</div>
+          </div>
+
+          <ul class="list-unstyled text-muted-custom fw-semibold">
+            <li class="d-flex align-items-start mb-3">
+              <span class="check-circle rounded-circle d-flex align-items-center justify-content-center me-2 mt-1" style="width:20px; height:20px;"><i class="bi bi-check-lg text-white" style="font-size:0.8rem;"></i></span>
+              Break free from the constant hustle of chasing clients and still feeling stuck.
+            </li>
+            <li class="d-flex align-items-start mb-3">
+              <span class="check-circle rounded-circle d-flex align-items-center justify-content-center me-2 mt-1" style="width:20px; height:20px;"><i class="bi bi-check-lg text-white" style="font-size:0.8rem;"></i></span>
+              No Tech Skills Needed | No Funnel Knowledge Required
+            </li>
+            <li class="d-flex align-items-start mb-3">
+              <span class="check-circle rounded-circle d-flex align-items-center justify-content-center me-2 mt-1" style="width:20px; height:20px;"><i class="bi bi-check-lg text-white" style="font-size:0.8rem;"></i></span>
+              Discover why your current efforts aren’t bringing results — and what to do instead.
+            </li>
+            <li class="d-flex align-items-start mb-3">
+              <span class="check-circle rounded-circle d-flex align-items-center justify-content-center me-2 mt-1" style="width:20px; height:20px;"><i class="bi bi-check-lg text-white" style="font-size:0.8rem;"></i></span>
+              Build your dream coaching business without tech overwhelm, confusion, or burnout.
+            </li>
+            <li class="d-flex align-items-start mb-3">
+              <span class="check-circle rounded-circle d-flex align-items-center justify-content-center me-2 mt-1" style="width:20px; height:20px;"><i class="bi bi-check-lg text-white" style="font-size:0.8rem;"></i></span>
+              Finally feel in control of your growth, income, and impact — without ads, funnels, or cold messages.
+            </li>
+            <li class="d-flex align-items-start mb-0">
+              <span class="check-circle rounded-circle d-flex align-items-center justify-content-center me-2 mt-1" style="width:20px; height:20px;"><i class="bi bi-check-lg text-white" style="font-size:0.8rem;"></i></span>
+              Learn a simple yet powerful system that gets you results from Day 1 (without complex automations).
+            </li>
+          </ul>
+
+          <a href="#" class="btn gold-pill-btn w-100 mt-4 rounded-pill fw-bold fs-6 py-3">Register For Free</a>
+          <div class="text-center text-muted-custom mt-2" style="font-size:0.92rem;">This free workshop will show you how to do exactly that.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+   <section class="container text-center py-4">
+    <div class="position-relative d-inline-block px-3">
+        <span class="badge rounded-pill bg-warning text-dark fw-bolder position-absolute top-0 start-50 translate-middle-x" style="z-index: 1; padding: 10px 22px;">Featured in</span>
+    </div>
+    <div class="dark-panel rounded-3 p-3 d-flex flex-wrap align-items-center justify-content-center gap-3 mt-4 shadow-lg mx-auto" style="max-width:980px;">
+      <img src="https://via.placeholder.com/150x26?text=Business+Standard" alt="Business Standard" style="height:26px;">
+      <img src="https://via.placeholder.com/110x26?text=dailyhunt" alt="dailyhunt" style="height:26px;">
+      <img src="https://via.placeholder.com/110x26?text=Hindustan+Times" alt="Hindustan Times" style="height:26px;">
+      <img src="https://via.placeholder.com/130x26?text=ThePrint" alt="ThePrint" style="height:26px;">
+    </div>
+  </section>
+
+  <section class="container text-center py-5">
+    <h2 class="text-warning fw-bolder fs-4 d-flex align-items-center justify-content-center mb-3">
+      <span class="me-2 fs-5 text-warning">⚠️</span>
+      STOP STRUGGLING TO FIND CLIENTS
+    </h2>
+
+    <ul class="list-unstyled mx-auto text-white fw-semibold" style="max-width:720px;">
+      <li class="d-flex align-items-start mb-3 gap-2">
+        <span class="bg-danger rounded-circle d-flex align-items-center justify-content-center text-white fw-bold mt-1" style="width:22px; height:22px; flex-shrink:0; font-size:0.8rem;">✖</span>
+        Tried posting on Instagram, but nothing converts?
+      </li>
+      <li class="d-flex align-items-start mb-3 gap-2">
+        <span class="bg-danger rounded-circle d-flex align-items-center justify-content-center text-white fw-bold mt-1" style="width:22px; height:22px; flex-shrink:0; font-size:0.8rem;">✖</span>
+        Done with cold DMs and random content?
+      </li>
+      <li class="d-flex align-items-start mb-3 gap-2">
+        <span class="bg-danger rounded-circle d-flex align-items-center justify-content-center text-white fw-bold mt-1" style="width:22px; height:22px; flex-shrink:0; font-size:0.8rem;">✖</span>
+        Feel like you’re meant for more, but tech holds you back?
+      </li>
+    </ul>
+
+    <p class="text-muted-custom fw-semibold mx-auto mt-4" style="max-width:760px;">
+      Now imagine <strong class="text-warning">waking up to 100+ quality leads a day</strong>, reaching out to work with you — without paid ads, without DMing, and without begging.
+    </p>
+
+    <p class="text-muted-custom mt-2 fw-medium">This free workshop will show you how to do exactly that.</p>
+
+    <div class="d-flex flex-column align-items-center mt-3">
+      <a class="btn gold-pill-btn rounded-pill fw-bolder fs-6 px-4 py-3" href="#" style="min-width:300px;">Register For Free</a>
+      <div class="gold-hr mt-2" style="width:120px; height:4px; border-radius:6px;"></div>
+    </div>
+  </section>
+
+  <section class="container text-center py-5">
+    <div class="text-warning fw-bolder fs-5 d-flex align-items-center justify-content-center mb-4">
+        <span class="me-2 fs-5">✅</span> In Just 2 hours, You Will Learn:
+    </div>
+
+    <div class="row g-3">
+      <div class="col-md-4">
+        <div class="dark-panel rounded-3 p-3 text-start h-100">
+          <div class="panel-icon rounded-2 d-inline-flex align-items-center justify-content-center mb-2" style="width:44px; height:44px; font-size:1.2rem;">🔥</div>
+          <div class="text-warning fw-bolder fs-6 mb-1">100 Leads A Day Formula</div>
+          <div class="text-muted-custom fw-medium" style="font-size:0.95rem;">A plug-and-play AI method that brings in leads daily using FREE tools.</div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="dark-panel rounded-3 p-3 text-start h-100">
+          <div class="panel-icon rounded-2 d-inline-flex align-items-center justify-content-center mb-2" style="width:44px; height:44px; font-size:1.2rem;">🧠</div>
+          <div class="text-warning fw-bolder fs-6 mb-1">No-Objection Sales Framework</div>
+          <div class="text-muted-custom fw-medium" style="font-size:0.95rem;">Close high-ticket clients (even if you hate selling).</div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="dark-panel rounded-3 p-3 text-start h-100">
+          <div class="panel-icon rounded-2 d-inline-flex align-items-center justify-content-center mb-2" style="width:44px; height:44px; font-size:1.2rem;">🎯</div>
+          <div class="text-warning fw-bolder fs-6 mb-1">USP Builder Blueprint</div>
+          <div class="text-muted-custom fw-medium" style="font-size:0.95rem;">Craft a powerful personal brand that makes you stand out instantly.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row g-3 mt-3">
+      <div class="col-md-6">
+        <div class="dark-panel rounded-3 p-3 text-start h-100">
+          <div class="panel-icon rounded-2 d-inline-flex align-items-center justify-content-center mb-2" style="width:44px; height:44px; font-size:1.2rem;">⚙️</div>
+          <div class="text-warning fw-bolder fs-6 mb-1">Funnel & Content Automation Setup</div>
+          <div class="text-muted-custom fw-medium" style="font-size:0.95rem;">No tech needed. Watch us build your system live in real time.</div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="dark-panel rounded-3 p-3 text-start h-100">
+          <div class="panel-icon rounded-2 d-inline-flex align-items-center justify-content-center mb-2" style="width:44px; height:44px; font-size:1.2rem;">📱</div>
+          <div class="text-warning fw-bolder fs-6 mb-1">Social Media Strategy for Coaches</div>
+          <div class="text-muted-custom fw-medium" style="font-size:0.95rem;">We show you what to post, when, and how to get leads without going viral.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="d-flex flex-column align-items-center mt-4">
+      <a href="#" class="btn gold-pill-btn rounded-pill fw-bolder fs-5 py-3 px-5" style="min-width:540px; max-width:90%;">Register For Free</a>
+      <div class="gold-hr mt-3" style="width:120px; height:4px; border-radius:8px;"></div>
+    </div>
+  </section>
+
+  <section class="container text-center py-5">
+    <div class="text-warning fw-bolder fs-4 d-flex align-items-center justify-content-center mb-4">
+      <span class="me-2 fs-5">🔥</span>
+      <div>This Is For You If:</div>
+    </div>
+
+    <div class="row row-cols-1 g-3 mx-auto" style="max-width:600px;">
+      <div class="col">
+        <div class="dark-panel rounded-3 p-3 d-flex align-items-center shadow-sm">
+          <div class="bg-success rounded-2 d-flex align-items-center justify-content-center text-white fw-bolder me-3" style="width:30px; height:30px; flex-shrink:0;">✓</div>
+          <div class="text-muted-custom fw-semibold text-start" style="font-size:0.98rem;">You're a Coach, Therapist, Yoga Instructor, or Nutritionist</div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="dark-panel rounded-3 p-3 d-flex align-items-center shadow-sm">
+          <div class="bg-success rounded-2 d-flex align-items-center justify-content-center text-white fw-bolder me-3" style="width:30px; height:30px; flex-shrink:0;">✓</div>
+          <div class="text-muted-custom fw-semibold text-start" style="font-size:0.98rem;">You want to automate your lead generation and sales</div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="dark-panel rounded-3 p-3 d-flex align-items-center shadow-sm">
+          <div class="bg-success rounded-2 d-flex align-items-center justify-content-center text-white fw-bolder me-3" style="width:30px; height:30px; flex-shrink:0;">✓</div>
+          <div class="text-muted-custom fw-semibold text-start" style="font-size:0.98rem;">You're stuck offline or doing random stuff online without results</div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="dark-panel rounded-3 p-3 d-flex align-items-center shadow-sm">
+          <div class="bg-success rounded-2 d-flex align-items-center justify-content-center text-white fw-bolder me-3" style="width:30px; height:30px; flex-shrink:0;">✓</div>
+          <div class="text-muted-custom fw-semibold text-start" style="font-size:0.98rem;">You've never used a landing page or funnel before</div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="dark-panel rounded-3 p-3 d-flex align-items-center shadow-sm">
+          <div class="bg-success rounded-2 d-flex align-items-center justify-content-center text-white fw-bolder me-3" style="width:30px; height:30px; flex-shrink:0;">✓</div>
+          <div class="text-muted-custom fw-semibold text-start" style="font-size:0.98rem;">You're serious about building a 6-figure business in 2025</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-4">
+      <a href="#" class="btn gold-pill-btn rounded-pill fw-bolder fs-6 px-5 py-3" style="min-width:520px; max-width:90%;">Register For Free</a>
+    </div>
+  </section>
+
+  <section class="container text-center py-5">
+    <h2 class="text-warning fw-bolder fs-4 mb-4">Hear From Coaches Like You</h2>
+
+    <div class="row g-3">
+      <div class="col-lg-4 col-md-6">
+        <div class="dark-panel rounded-3 shadow-lg position-relative overflow-hidden">
+          <div class="ratio ratio-16x9">
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" title="Testimonial 1" allowfullscreen></iframe>
+          </div>
+          <div class="position-absolute top-0 bottom-0 start-0 end-0 d-flex align-items-center justify-content-center" style="pointer-events:none;">
+            <div class="bg-warning rounded-circle d-flex align-items-center justify-content-center text-dark" style="width:68px; height:68px; font-size:28px;">▶</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="dark-panel rounded-3 shadow-lg position-relative overflow-hidden">
+          <div class="ratio ratio-16x9">
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" title="Testimonial 2" allowfullscreen></iframe>
+          </div>
+          <div class="position-absolute top-0 bottom-0 start-0 end-0 d-flex align-items-center justify-content-center" style="pointer-events:none;">
+            <div class="bg-warning rounded-circle d-flex align-items-center justify-content-center text-dark" style="width:68px; height:68px; font-size:28px;">▶</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="dark-panel rounded-3 shadow-lg position-relative overflow-hidden">
+          <div class="ratio ratio-16x9">
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID_3" title="Testimonial 3" allowfullscreen></iframe>
+          </div>
+          <div class="position-absolute top-0 bottom-0 start-0 end-0 d-flex align-items-center justify-content-center" style="pointer-events:none;">
+            <div class="bg-warning rounded-circle d-flex align-items-center justify-content-center text-dark" style="width:68px; height:68px; font-size:28px;">▶</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="dark-panel rounded-3 shadow-lg position-relative overflow-hidden">
+          <div class="ratio ratio-16x9">
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID_4" title="Testimonial 4" allowfullscreen></iframe>
+          </div>
+          <div class="position-absolute top-0 bottom-0 start-0 end-0 d-flex align-items-center justify-content-center" style="pointer-events:none;">
+            <div class="bg-warning rounded-circle d-flex align-items-center justify-content-center text-dark" style="width:68px; height:68px; font-size:28px;">▶</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="dark-panel rounded-3 shadow-lg position-relative overflow-hidden">
+          <div class="ratio ratio-16x9">
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID_5" title="Testimonial 5" allowfullscreen></iframe>
+          </div>
+          <div class="position-absolute top-0 bottom-0 start-0 end-0 d-flex align-items-center justify-content-center" style="pointer-events:none;">
+            <div class="bg-warning rounded-circle d-flex align-items-center justify-content-center text-dark" style="width:68px; height:68px; font-size:28px;">▶</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="dark-panel rounded-3 shadow-lg position-relative overflow-hidden">
+          <div class="ratio ratio-16x9">
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID_6" title="Testimonial 6" allowfullscreen></iframe>
+          </div>
+          <div class="position-absolute top-0 bottom-0 start-0 end-0 d-flex align-items-center justify-content-center" style="pointer-events:none;">
+            <div class="bg-warning rounded-circle d-flex align-items-center justify-content-center text-dark" style="width:68px; height:68px; font-size:28px;">▶</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="d-flex flex-column align-items-center mt-4">
+      <a class="btn gold-pill-btn rounded-pill fw-bolder fs-6 px-5 py-3" href="#" style="min-width:420px; max-width:90%;">Register For Free</a>
+      <div class="gold-hr mt-2" style="width:120px; height:4px; border-radius:6px;"></div>
+    </div>
+  </section>
+
+  <section class="container text-center py-5">
+    <h2 class="text-warning fw-bolder fs-5">About Mentor</h2>
+    <div class="text-muted-custom fw-semibold mb-4">
+      &amp; The Tremendous Change She'll Help Bring In Your Life
+    </div>
+
+    <div class="row g-4 justify-content-center">
+      <div class="col-lg-4">
+        <div class="dark-panel rounded-4 p-3 mx-auto shadow-lg">
+          <div class="rounded-3 p-3 position-relative" style="background-color:rgba(246,176,25,0.06);">
+            <div class="text-center d-flex justify-content-center align-items-center" style="height: 360px;">
+              <img class="rounded-3 shadow-lg" src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?q=80&w=800&auto=format&fit=crop" alt="Chirag Chhabra" style="width:220px; height:300px; object-fit:cover; border: 6px solid rgba(0,0,0,0.25);">
+            </div>
+            <div class="gold-pill-btn rounded-3 fw-bolder p-3 mt-3 d-inline-block shadow-sm">
+              Chirag Chhabra<br>
+              <small class="fw-semibold text-dark" style="font-size:0.85rem;">Leading Business Coach · Quality Leads Specialist</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-8">
+        <div class="text-start text-muted-custom fw-medium lh-base">
+          <p>
+            <strong class="text-warning fw-bolder">A Growth-Focused Coach With Real Business Experience</strong> — Chirag isn't just another trainer. He's a business coach who has worked directly with hundreds of health and wellness coaches to build systems that actually bring clients — without chasing, begging, or burning out.
+          </p>
+
+          <p>
+            He knows your struggles: <strong class="text-warning fw-bolder">No leads. No sales. No clarity.</strong>
+          </p>
+
+          <p>
+            That's exactly why he created this challenge — to help you stop guessing and start growing. Over the past few years, he's helped solo coaches:
+          </p>
+
+          <ul class="ms-4 fw-semibold">
+            <li>Get 100+ leads a day (without paid ads)</li>
+            <li>Automate their sales process</li>
+            <li>Close high-ticket offers with confidence</li>
+            <li>Build six-figure businesses — even with zero tech background</li>
+          </ul>
+
+          <p>
+            This isn't theory. It's real-world business. And Chirag is here to walk with you, step-by-step, until you get the results you deserve.
+          </p>
+
+          <div class="p-3 rounded-2 mt-3 fw-bold fst-italic text-success-emphasis" style="background-color: rgba(12,70,34,0.1); border: 2px solid rgba(28,150,72,0.3);">
+            “To help every coach turn their passion into profit — using simple tools, proven frameworks, and automation that works.”
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="d-flex flex-column align-items-center mt-4">
+      <a class="btn gold-pill-btn rounded-pill fw-bolder fs-6 px-5 py-3" href="#" style="min-width:420px; max-width:90%;">Register For Free</a>
+      <div class="gold-hr mt-3" style="width:120px; height:4px; border-radius:6px;"></div>
+    </div>
+  </section>
+
+  <section class="container text-center py-5">
+    <h2 class="text-warning fw-bolder fs-4 mb-3">
+      🧠 Your Current Problem Is NOT Your Content —<br>It’s Your System.
+    </h2>
+
+    <div class="text-muted-custom fw-semibold mb-2">You don’t need <strong class="text-white">more likes or reels</strong>.</div>
+    <div class="text-muted-custom fw-semibold mb-2">You need a system that brings leads and clients on autopilot.</div>
+    <div class="text-muted-custom fw-semibold mb-3">And that’s <strong class="text-white">exactly</strong> what we’re going to build together.</div>
+
+    <div class="mt-4">
+      <a href="#" class="btn gold-pill-btn rounded-pill fw-bolder fs-6 px-5 py-3" style="min-width:340px; max-width:90%;">Register For Free</a>
+    </div>
+
+    <div class="gold-hr mt-3 mx-auto" style="width:120px; height:3px; border-radius:6px;"></div>
+  </section>
+
+  <section class="container text-center py-5">
+    <h2 class="text-warning fw-bolder fs-5 mb-4">🎁 BONUS (ONLY FOR LIVE ATTENDEES)</h2>
+
+    <div class="row g-3 mx-auto" style="max-width:850px;">
+      <div class="col-md-6">
+        <div class="dark-panel rounded-3 p-3 d-flex align-items-center shadow-sm">
+          <span class="fs-5 me-2">🎁</span>
+          <span class="text-muted-custom fw-semibold">AI Funnel Template</span>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="dark-panel rounded-3 p-3 d-flex align-items-center shadow-sm">
+          <span class="fs-5 me-2">🎁</span>
+          <span class="text-muted-custom fw-semibold">Social Media Content Calendar</span>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="dark-panel rounded-3 p-3 d-flex align-items-center shadow-sm">
+          <span class="fs-5 me-2">🎁</span>
+          <span class="text-muted-custom fw-semibold">High-Converting Lead Magnet Blueprint</span>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="dark-panel rounded-3 p-3 d-flex align-items-center shadow-sm">
+          <span class="fs-5 me-2">🎁</span>
+          <span class="text-muted-custom fw-semibold">No–Objection Sales Script</span>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="dark-panel rounded-3 p-3 d-flex align-items-center justify-content-center shadow-sm">
+          <span class="fs-5 me-2">🎁</span>
+          <span class="text-muted-custom fw-semibold">Exclusive Lifetime Community Access</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-muted-custom fw-semibold mt-3">
+      🎉 Plus: <strong class="text-white">Surprise Giveaway</strong> for First 50 Registrations
+    </div>
+
+    <div class="mt-4">
+      <a href="#" class="btn gold-pill-btn rounded-pill fw-bolder fs-6 px-5 py-3" style="min-width:340px; max-width:90%;">Register For Free</a>
+    </div>
+
+    <div class="gold-hr mt-3 mx-auto" style="width:120px; height:3px; border-radius:6px;"></div>
+  </section>
+
+  <section class="container text-center py-5">
+    <h2 class="text-warning fw-bolder fs-4 mb-4">🌟 Real Coaches. Real Results</h2>
+
+    <div class="overflow-hidden position-relative">
+      <div class="d-flex justify-content-center" id="quoteCarousel">
+        <div class="d-flex" id="quoteInner">
+          <div class="dark-panel rounded-3 p-3 text-start shadow-sm flex-shrink-0 me-3" style="min-width:320px; max-width:520px;">
+            <div class="text-white fw-bold fst-italic mb-3 lh-base">“I doubled my monthly income and finally feel confident talking about my services.”</div>
+            <div class="d-flex align-items-center text-muted-custom fw-semibold">
+              <img class="rounded-circle me-2" src="https://via.placeholder.com/64" alt="Sanjana Iyer" style="width:44px; height:44px; object-fit:cover;">
+              <div>
+                <div class="text-white fw-bolder">Sanjana Iyer</div>
+                <div style="font-size:0.85rem;">Mindfulness Coach</div>
+              </div>
+            </div>
+          </div>
+          <div class="dark-panel rounded-3 p-3 text-start shadow-sm flex-shrink-0 me-3" style="min-width:320px; max-width:520px;">
+            <div class="text-white fw-bold fst-italic mb-3 lh-base">“I was stuck for 8 months with no clients. After this workshop, I got 37 leads in 3 days!”</div>
+            <div class="d-flex align-items-center text-muted-custom fw-semibold">
+              <img class="rounded-circle me-2" src="https://via.placeholder.com/64" alt="Aarti Mehra" style="width:44px; height:44px; object-fit:cover;">
+              <div>
+                <div class="text-white fw-bolder">Aarti Mehra</div>
+                <div style="font-size:0.85rem;">Nutrition Coach</div>
+              </div>
+            </div>
+          </div>
+          <div class="dark-panel rounded-3 p-3 text-start shadow-sm flex-shrink-0" style="min-width:320px; max-width:520px;">
+            <div class="text-white fw-bold fst-italic mb-3 lh-base">“I closed two high-ticket clients in the first week after applying their system.”</div>
+            <div class="d-flex align-items-center text-muted-custom fw-semibold">
+              <img class="rounded-circle me-2" src="https://via.placeholder.com/64" alt="Ravi" style="width:44px; height:44px; object-fit:cover;">
+              <div>
+                <div class="text-white fw-bolder">Ravi Shah</div>
+                <div style="font-size:0.85rem;">Fitness Coach</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex justify-content-center gap-2 mt-3" id="dotsTop"></div>
+
+    <div class="position-relative mt-4">
+      <div class="d-none d-lg-block position-absolute top-50 translate-middle-y start-0" style="left:-18px;">
+        <button class="btn btn-dark rounded-circle slider-arrow" id="leftArrow" style="width:40px; height:40px;">‹</button>
+      </div>
+      <div class="d-none d-lg-block position-absolute top-50 translate-middle-y end-0" style="right:-18px;">
+        <button class="btn btn-dark rounded-circle slider-arrow" id="rightArrow" style="width:40px; height:40px;">›</button>
+      </div>
+
+      <div class="d-flex overflow-auto pb-2" id="mediaTrack" tabindex="0" aria-label="Testimonial media" style="gap:18px;">
+        <div class="dark-panel rounded-3 overflow-hidden flex-shrink-0 shadow-sm" style="min-width:300px; max-width:360px;">
+          <img class="img-fluid" src="https://via.placeholder.com/640x360?text=Meet+Akshay" alt="Meet Akshay" style="height:170px; object-fit:cover;">
+          <div class="p-2 text-start fw-bold text-muted-custom">MEET AKSHAY — Closed his 2nd Deal within 10 days</div>
+        </div>
+        <div class="dark-panel rounded-3 overflow-hidden flex-shrink-0 shadow-sm" style="min-width:300px; max-width:360px;">
+          <img class="img-fluid" src="https://via.placeholder.com/640x360?text=Meet+Himanshu" alt="Meet Himanshu" style="height:170px; object-fit:cover;">
+          <div class="p-2 text-start fw-bold text-muted-custom">MEET HIMANSHU — Confidently Closing High-paying Clients</div>
+        </div>
+        <div class="dark-panel rounded-3 overflow-hidden flex-shrink-0 shadow-sm" style="min-width:300px; max-width:360px;">
+          <img class="img-fluid" src="https://via.placeholder.com/640x360?text=Meet+Shreyash" alt="Meet Shreyash" style="height:170px; object-fit:cover;">
+          <div class="p-2 text-start fw-bold text-muted-custom">MEET SHREYASH — Able to Close 1000s Clients</div>
+        </div>
+        <div class="dark-panel rounded-3 overflow-hidden flex-shrink-0 shadow-sm" style="min-width:300px; max-width:360px;">
+          <img class="img-fluid" src="https://via.placeholder.com/640x360?text=Meet+Priya" alt="Meet Priya" style="height:170px; object-fit:cover;">
+          <div class="p-2 text-start fw-bold text-muted-custom">MEET PRIYA — Scaled Revenue 3x</div>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex justify-content-center gap-2 mt-2" id="dotsMedia"></div>
+
+    <div class="mt-4">
+      <a class="btn gold-pill-btn rounded-pill fw-bolder fs-6 px-4 py-3" href="#">Register For Free</a>
+    </div>
+
+    <div class="red-limited-box mx-auto mt-4 p-4 rounded-3 shadow-lg" style="max-width:820px;">
+      <div class="text-danger fw-bolder fs-5">🔒 Limited Spots Available <br><span class="fw-bolder d-block">(Fills Fast Every Time)</span></div>
+      <p class="mt-2 mb-0 text-muted-custom fw-semibold">
+        This workshop is <strong class="text-white">LIVE</strong>, practical, and results-focused.<br> We're only accepting serious, committed coaches. Once it's full — it’s full.
+      </p>
+    </div>
+
+    <div class="gold-hr mt-3 mx-auto" style="width:120px; height:4px; border-radius:6px;"></div>
+  </section>
+
+  <section class="container text-center py-5">
+    <h2 class="text-warning fw-bolder fs-4 mb-4">🌟 Frequently Asked Questions</h2>
+
+    <div class="accordion mx-auto" id="faqList" style="max-width:980px;">
+      <div class="dark-panel rounded-3 mb-3 shadow-lg faq-item open" data-index="0">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button bg-warning text-dark fw-bolder fs-6 py-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" id="faq-toggle-0">
+            Do I need to be tech-savvy?
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqList">
+          <div class="accordion-body text-start text-muted-custom fw-semibold">
+            Not at all. If you can use WhatsApp, you can follow along with this session. It’s <em>plug and play</em>.
+          </div>
+        </div>
+      </div>
+
+      <div class="dark-panel rounded-3 mb-3 shadow-lg faq-item closed" data-index="1">
+        <h2 class="accordion-header" id="headingTwo">
+          <button class="accordion-button collapsed dark-panel text-muted-custom fw-bolder fs-6 py-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" id="faq-toggle-1">
+            Is this really free?
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqList">
+          <div class="accordion-body text-start text-muted-custom fw-semibold">
+            Yes — the workshop is free. We do provide optional paid offerings later, but the live training itself is free for attendees.
+          </div>
+        </div>
+      </div>
+
+      <div class="dark-panel rounded-3 mb-3 shadow-lg faq-item closed" data-index="2">
+        <h2 class="accordion-header" id="headingThree">
+          <button class="accordion-button collapsed dark-panel text-muted-custom fw-bolder fs-6 py-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" id="faq-toggle-2">
+            Will I be able to use this even if I don’t know how to sell?
+          </button>
+        </h2>
+        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqList">
+          <div class="accordion-body text-start text-muted-custom fw-semibold">
+            Yes — we teach a no-objection sales framework and show you how to close clients without hard selling.
+          </div>
+        </div>
+      </div>
+
+      <div class="dark-panel rounded-3 mb-3 shadow-lg faq-item closed" data-index="3">
+        <h2 class="accordion-header" id="headingFour">
+          <button class="accordion-button collapsed dark-panel text-muted-custom fw-bolder fs-6 py-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour" id="faq-toggle-3">
+            Is this for beginners or people already earning online?
+          </button>
+        </h2>
+        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqList">
+          <div class="accordion-body text-start text-muted-custom fw-semibold">
+            The workshop is designed for both — we cover fundamentals and advanced tactics so both beginners and experienced coaches benefit.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-dark text-light py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-8 offset-md-2 text-center">
+          <h2 class="fw-bold mb-3 fs-3">Chirag Chhabra</h2>
+
+          <p class="mb-3 lh-lg text-secondary">
+            This site is not a part of the Facebook™ website or Facebook™ Inc. Additionally,
+            this site is <strong>NOT</strong> endorsed by Facebook™ in any way. FACEBOOK™ is a trademark of FACEBOOK™, Inc.
+          </p>
+
+          <p class="mb-0 fw-semibold text-secondary">All Rights Reserved © 2025. Chirag Chhabra &amp; Team</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Simple carousel for top quotes (modified from original to use class/style toggles)
+    (function(){
+      const quoteInner = document.getElementById('quoteInner');
+      const dotsTop = document.getElementById('dotsTop');
+      const cards = quoteInner.children;
+      let qIndex = 0;
+      const total = cards.length;
+      const cardMargin = 18; // gap value
+
+      // create dots
+      for(let i=0;i<total;i++){
+        const d = document.createElement('div');
+        d.className='dot rounded-circle shadow-sm' + (i===0? ' bg-warning':' bg-secondary-subtle');
+        d.dataset.index=i;
+        d.style.cssText = 'width:8px; height:8px; cursor:pointer;';
+        d.addEventListener('click', () => { goToQuote(i); });
+        dotsTop.appendChild(d);
+      }
+
+      function goToQuote(i){
+        qIndex = i;
+        const offset = - (cards[0].offsetWidth + cardMargin) * i;
+        quoteInner.style.transition = 'transform .5s ease';
+        quoteInner.style.transform = `translateX(${offset}px)`;
+        Array.from(dotsTop.children).forEach((el, idx) => {
+          el.classList.toggle('bg-warning', idx===i);
+          el.classList.toggle('bg-secondary-subtle', idx!==i);
+        });
+      }
+
+      // auto rotate
+      setInterval(()=> { goToQuote((qIndex+1) % total); }, 5000);
+    })();
+
+    // media horizontal slider with arrows and dots (modified for Bootstrap visual classes)
+    (function(){
+      const track = document.getElementById('mediaTrack');
+      const left = document.getElementById('leftArrow');
+      const right = document.getElementById('rightArrow');
+      const dotsMedia = document.getElementById('dotsMedia');
+
+      const cards = Array.from(track.children);
+      const cardGap = 18;
+      const cardWidth = () => cards.length > 0 ? cards[0].getBoundingClientRect().width + cardGap : 0;
+
+      // create dots
+      const pages = Math.max(1, cards.length); // Assume one dot per card for simplicity
+      for(let i=0;i<pages;i++){
+        const d = document.createElement('div');
+        d.className='dot rounded-circle shadow-sm' + (i===0? ' bg-warning':' bg-secondary-subtle');
+        d.dataset.index=i;
+        d.style.cssText = 'width:7px; height:7px; cursor:pointer;';
+        d.addEventListener('click', () => scrollToIndex(i));
+        dotsMedia.appendChild(d);
+      }
+
+      function scrollToIndex(i){
+        const x = i * cardWidth();
+        track.scrollTo({ left: x, behavior: 'smooth' });
+        Array.from(dotsMedia.children).forEach((el, idx) => {
+          el.classList.toggle('bg-warning', idx===i);
+          el.classList.toggle('bg-secondary-subtle', idx!==i);
+        });
+      }
+
+      left.addEventListener('click', () => { track.scrollBy({ left: -cardWidth(), behavior:'smooth' }); });
+      right.addEventListener('click', () => { track.scrollBy({ left: cardWidth(), behavior:'smooth' }); });
+
+      // update dots on scroll
+      track.addEventListener('scroll', () => {
+        const idx = Math.round(track.scrollLeft / cardWidth());
+        Array.from(dotsMedia.children).forEach((el, i) => {
+          el.classList.toggle('bg-warning', i===idx);
+          el.classList.toggle('bg-secondary-subtle', i!==idx);
+        });
+      });
+    })();
+
+    // The original custom FAQ JS is replaced by the Bootstrap 5 Accordion component, which handles all collapsing behavior natively.
+    // The only custom classes used for visual state (open/closed) were removed/simplified.
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
